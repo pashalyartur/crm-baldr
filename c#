@@ -26,34 +26,61 @@ namespace l113
 		void Button1_Click(object sender, EventArgs e)
 		{
 			// TODO: Implement Button1_Click
-			StreamWriter w= new StreamWriter("C:/Users/student/Desktop/sharp/data.txt");
+			//1
+			StreamWriter newtxt= new StreamWriter("C:/Users/student/Desktop/artur/data.txt");
+			
 			for(int i=0; i<textBox1.Lines.Length; i++)
 			{
-				w.WriteLine(textBox1.Lines[i]);
+				newtxt.WriteLine(textBox1.Lines[i]);
 			}
-			w.Close();
-			StreamWriter WW= new StreamWriter("C:/Users/student/Desktop/sharp/result.txt");
-			StreamReader r= new StreamReader("C:/Users/student/Desktop/sharp/data.txt");
+	
+			newtxt.Close();
+			
+			
+			//2
+			
+			
+			
+			//3
+			StreamWriter restxt= new StreamWriter("C:/Users/student/Desktop/artur/result.txt");
+			StreamReader r= new StreamReader("C:/Users/student/Desktop/artur/data.txt");
 			for(int i=0; i<textBox1.Lines.Length; i++)
 			{
-				//w.WriteLine(textBox1.Lines[i]);
 				string s=r.ReadLine();
 				if(s.Contains("f")==true)
 				{
 					foreach(char c in s)
 					{
-						if(c=='f')WW.Write("*");
-							else WW.Write(c);
+						if(c=='f') restxt.Write("*");
+						
+						else restxt.Write(c);
 					}
-					WW.Write("\r\n");
+					restxt.Write("\r\n");
 				}
-				else WW.WriteLine(s);
+				else restxt.WriteLine(s);
 			}
-			WW.Close();
+			restxt.Close();
 			r.Close();
-			StreamReader RR= new StreamReader("C:/Users/student/Desktop/sharp/result.txt");
+			StreamReader RR= new StreamReader("C:/Users/student/Desktop/artur/result.txt");
 			for(int i=0; i<textBox1.Lines.Length; i++)
 			{
 				textBox2.AppendText(RR.ReadLine()+"\r\n");
 			}
 		}
+		
+		void OpenFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			// TODO: Implement OpenFileDialog1_FileOk
+		}
+		
+		void TextBox1_TextChanged(object sender, EventArgs e)
+		{
+			// TODO: Implement TextBox1_TextChanged
+		}
+		
+		void TextBox2_TextChanged(object sender, EventArgs e)
+		{
+			// TODO: Implement TextBox2_TextChanged
+		}
+	}
+}
